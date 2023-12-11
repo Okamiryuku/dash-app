@@ -8,7 +8,7 @@ import plotly.express as px
 import pandas as pd
 
 resorts = (
-    pd.read_csv("/resorts.csv", encoding = "ISO-8859-1")
+    pd.read_csv("./resorts.csv", encoding = "ISO-8859-1")
     .assign(
         country_elevation_rank = lambda x: x.groupby("Country", as_index=False)["Highest point"].rank(ascending=False),
         country_price_rank = lambda x: x.groupby("Country", as_index=False)["Price"].rank(ascending=False),
